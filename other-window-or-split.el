@@ -67,5 +67,22 @@
     (split-window-dwim))
   (other-window -1))
 
+(defun adjust-windows-size ()
+  (interactive)
+  (balance-windows-area)
+  (balance-windows))
+
 (provide 'other-window-or-split)
 ;;; other-window-or-sprit.el ends here
+
+
+
+
+
+
+
+
+
+
+
+
