@@ -42,13 +42,30 @@
        (- (window-width) (/ (window-width) num_wins)))
       (split-window-horizontally-n (- num_wins 1)))))
 
+(defun enstandard-split-num (split-num)
+  (if (<= 2 split-num)
+      split-num
+    2))
+
+(defun split-window-dwim ()
+  (interactive)
+    (if (>= (window-body-width) (*(window-body-height) 2))
+      (split-window-horizontally-n
+       (enstandard-split-num (floor (/ (window-body-width) 70))))
+    (split-window-vertically-n
+     (enstandard-split-num (floor (/ (window-body-height) 50))))))
+
 (defun other-window-or-split ()
   (interactive)
   (when (one-window-p)
-    (if (>= (window-body-width) 270)
-        (split-window-horizontally-n 3)
-      (split-window-horizontally)))
+    (split-window-dwim))
   (other-window 1))
+
+(defun previous-other-window-or-split ()
+  (interactive)
+  (when (one-window-p)
+    (split-window-dwim))
+  (other-window -1))
 
 (provide 'other-window-or-split)
 ;;; other-window-or-sprit.el ends here
