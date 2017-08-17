@@ -25,7 +25,7 @@
 ;;; Code:
 
 (defun split-window-vertically-n (num_wins)
-  (interactive "p")
+  (interactive "nsplitnum:")
   (if (= num_wins 2)
       (split-window-vertically)
     (progn
@@ -34,7 +34,7 @@
       (split-window-vertically-n (- num_wins 1)))))
 
 (defun split-window-horizontally-n (num_wins)
-  (interactive "p")
+  (interactive "nsplitnum:")
   (if (= num_wins 2)
       (split-window-horizontally)
     (progn
