@@ -25,6 +25,9 @@
 ;;; Code:
 
 ;; variables
+(defvar split-window-or-split-version 2.0
+  "split-window-or-split version")
+
 (defvar split-window-width-with-em 90
   "minimam window width with split-window-dwim")
 
