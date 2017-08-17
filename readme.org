@@ -1,0 +1,15 @@
+* What's this?
+This package provide =other-window-or-split= and =window-split-dwim= .
+
+[[./image/split.gif]]
+* install
+#+BEGIN_SRC elisp
+  (use-package other-window-or-split
+    :init (el-get-bundle conao/other-window-or-split)
+    :bind* (("C-t"   . other-window-or-split)
+            ("C-S-t" . previous-other-window-or-split)
+            ("M-t"   . split-window-dwim)
+            ("C-c j" . adjust-windows-size)))
+#+END_SRC
+
+Depending =use-package= and =el-get= for this sumple code.
