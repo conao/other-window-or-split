@@ -74,15 +74,3 @@
 
 (provide 'other-window-or-split)
 ;;; other-window-or-sprit.el ends here
-
-
-
-
-
-
-
-
-
-
-
-
