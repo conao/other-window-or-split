@@ -24,6 +24,14 @@
 
 ;;; Code:
 
+;; variables
+(defvar split-window-width-with-em 90
+  "minimam window width with split-window-dwim")
+
+(defvar split-window-hight-with-em 50
+  "minimam window hight with split-window-dwim")
+
+;; functions
 (defun split-window-vertically-n (num_wins)
   (interactive "nsplitnum:")
   (if (= num_wins 2)
@@ -51,9 +59,9 @@
   (interactive)
     (if (>= (window-body-width) (*(window-body-height) 2))
       (split-window-horizontally-n
-       (enstandard-split-num (floor (/ (window-body-width) 90))))
+       (enstandard-split-num (floor (/ (window-body-width) split-window-width-with-em))))
     (split-window-vertically-n
-     (enstandard-split-num (floor (/ (window-body-height) 50))))))
+     (enstandard-split-num (floor (/ (window-body-height) split-window-hight-with-em))))))
 
 (defun other-window-or-split ()
   (interactive)
