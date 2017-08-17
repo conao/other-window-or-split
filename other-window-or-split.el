@@ -51,7 +51,7 @@
   (interactive)
     (if (>= (window-body-width) (*(window-body-height) 2))
       (split-window-horizontally-n
-       (enstandard-split-num (floor (/ (window-body-width) 70))))
+       (enstandard-split-num (floor (/ (window-body-width) 90))))
     (split-window-vertically-n
      (enstandard-split-num (floor (/ (window-body-height) 50))))))
 
