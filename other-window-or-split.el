@@ -91,7 +91,7 @@
   (let ((window-obj (selected-window))
         (current-width (window-width))
         (current-height (window-height))
-        (dx (if (= (nth 0 (window-edges)) 0) 1
+        (dx (if (= (nth 0 (window-edges)) 0)
               -1))
         (dy (if (= (nth 1 (window-edges)) 0) 1
               -1))
@@ -103,13 +103,13 @@
                                                 (window-width)
                                                 (window-height))))
         (setq c (aref action 0))
-        (cond ((= c ?l)
+        (cond ((or (= c ?l) (= c ?b))
                (enlarge-window-horizontally dx))
-              ((= c ?h)
+              ((or (= c ?h) (= c ?f))
                (shrink-window-horizontally dx))
-              ((= c ?j)
+              ((or (= c ?j) (= c ?p))
                (enlarge-window dy))
-              ((= c ?k)
+              ((or (= c ?k) (= c ?n))
                (shrink-window dy))
               ;; otherwise
               (t
