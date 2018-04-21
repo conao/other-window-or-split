@@ -20,7 +20,7 @@
 
 ;;; Commentary:
 
-;; (global-set-key (kbd "C-t") 'other-window-or-split)
+;; (global-set-key (kbd "C-t") 'ws-other-window-or-split)
 
 ;;; Code:
 
