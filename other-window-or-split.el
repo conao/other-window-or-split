@@ -25,7 +25,7 @@
 ;;; Code:
 
 ;; variables
-(defvar ws-split-window-or-split-version 2.0
+(defvar ws-split-window-or-split-version 3.0
   "split-window-or-split version")
 
 (defvar ws-split-window-width-with-em 90
