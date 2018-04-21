@@ -25,17 +25,17 @@
 ;;; Code:
 
 ;; variables
-(defvar split-window-or-split-version 2.0
+(defvar ws-split-window-or-split-version 2.0
   "split-window-or-split version")
 
-(defvar split-window-width-with-em 90
+(defvar ws-split-window-width-with-em 90
   "minimam window width with split-window-dwim")
 
-(defvar split-window-hight-with-em 50
+(defvar ws-split-window-hight-with-em 50
   "minimam window hight with split-window-dwim")
 
 ;; functions
-(defun split-window-vertically-n (num_wins)
+(defun ws-split-window-vertically-n (num_wins)
   (interactive "nsplitnum:")
   (if (= num_wins 2)
       (split-window-vertically)
@@ -44,7 +44,7 @@
        (- (window-height) (/ (window-height) num_wins)))
       (split-window-vertically-n (- num_wins 1)))))
 
-(defun split-window-horizontally-n (num_wins)
+(defun ws-split-window-horizontally-n (num_wins)
   (interactive "nsplitnum:")
   (if (= num_wins 2)
       (split-window-horizontally)
@@ -53,12 +53,12 @@
        (- (window-width) (/ (window-width) num_wins)))
       (split-window-horizontally-n (- num_wins 1)))))
 
-(defun enstandard-split-num (split-num)
+(defun ws-enstandard-split-num (split-num)
   (if (<= 2 split-num)
       split-num
     2))
 
-(defun split-window-dwim ()
+(defun ws-split-window-dwim ()
   (interactive)
     (if (>= (window-body-width) (*(window-body-height) 2))
       (split-window-horizontally-n
@@ -66,26 +66,26 @@
     (split-window-vertically-n
      (enstandard-split-num (floor (/ (window-body-height) split-window-hight-with-em))))))
 
-(defun other-window-or-split ()
+(defun ws-other-window-or-split ()
   (interactive)
   (when (one-window-p)
     (split-window-dwim))
   (other-window 1))
 
-(defun previous-other-window-or-split ()
+(defun ws-previous-other-window-or-split ()
   (interactive)
   (when (one-window-p)
     (split-window-dwim))
   (other-window -1))
 
-(defun adjust-windows-size ()
+(defun ws-adjust-windows-size ()
   (interactive)
   (balance-windows-area)
   (balance-windows))
 
 ;; http://d.hatena.ne.jp/mooz/20100119/p1
 ;; http://d.hatena.ne.jp/khiker/20100119/window_resize
-(defun my-window-resizer ()
+(defun ws-window-resizer ()
   "Control window size and position."
   (interactive)
   (let ((window-obj (selected-window))
