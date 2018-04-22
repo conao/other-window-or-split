@@ -69,7 +69,7 @@
 (defun ws-other-window-or-split ()
   (interactive)
   (when (one-window-p)
-    (split-window-dwim))
+    (ws-split-window-dwim))
   (other-window 1))
 
 (defun ws-previous-other-window-or-split ()
