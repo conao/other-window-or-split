@@ -61,9 +61,9 @@
 (defun ws-split-window-dwim ()
   (interactive)
     (if (>= (window-body-width) (*(window-body-height) 2))
-      (split-window-horizontally-n
+      (ws-split-window-horizontally-n
        (enstandard-split-num (floor (/ (window-body-width) split-window-width-with-em))))
-    (split-window-vertically-n
+    (ws-split-window-vertically-n
      (enstandard-split-num (floor (/ (window-body-height) split-window-hight-with-em))))))
 
 (defun ws-other-window-or-split ()
