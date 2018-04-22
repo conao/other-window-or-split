@@ -42,7 +42,7 @@
     (progn
       (split-window-vertically
        (- (window-height) (/ (window-height) num_wins)))
-      (split-window-vertically-n (- num_wins 1)))))
+      (ws-split-window-vertically-n (- num_wins 1)))))
 
 (defun ws-split-window-horizontally-n (num_wins)
   (interactive "nsplitnum:")
@@ -51,7 +51,7 @@
     (progn
       (split-window-horizontally
        (- (window-width) (/ (window-width) num_wins)))
-      (split-window-horizontally-n (- num_wins 1)))))
+      (ws-split-window-horizontally-n (- num_wins 1)))))
 
 (defun ws-enstandard-split-num (split-num)
   (if (<= 2 split-num)
@@ -62,9 +62,9 @@
   (interactive)
     (if (>= (window-body-width) (*(window-body-height) 2))
       (ws-split-window-horizontally-n
-       (enstandard-split-num (floor (/ (window-body-width) split-window-width-with-em))))
+       (ws-enstandard-split-num (floor (/ (window-body-width) ws-split-window-width-with-em))))
     (ws-split-window-vertically-n
-     (enstandard-split-num (floor (/ (window-body-height) split-window-hight-with-em))))))
+     (ws-enstandard-split-num (floor (/ (window-body-height) ws-split-window-hight-with-em))))))
 
 (defun ws-other-window-or-split ()
   (interactive)
